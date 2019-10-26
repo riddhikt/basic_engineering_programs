@@ -1,0 +1,497 @@
+Objective:To learn linux commands
+
+
+1) ls 
+listing all the files present in the directory
+1.1) ls-a: Displays all files
+
+apr@C04L0825:~$ ls -a
+.								  examples.desktop			  netbeans-8.1
+..								  .gconf				  .netbeans-derby
+.android							  .gksu.lock				  NetBeansProjects
+Android								  glassfish-4.1.1			  .nv
+.AndroidStudio1.5						  GlassFish_Server			  oracle_installation-steps (1).doc
+.AndroidStudio2.1						  GlassFish_Server1			  .oracle_jre_usage
+.AndroidStudio2.2						  GlassFish_Server2			  oracle-xe_11.2.0-2_amd64.deb
+AndroidStudioProjects						  .gnupg				  Pictures
+.bash_history							  .gradle				  PracticalsCL3 extracommands
+.bash_logout							  .gvfs					  .profile
+.bashrc								  .ICEauthority				  Public
+..bashrc.swp							  .java					  pugixml-1.8.tar.gz
+.cache								  libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb  R
+.compiz								  .local				  rapidxml-1.13.zip
+.config								  .~lock.riddhik.doc#			  RemoteSystemsTempFiles
+cuda-workspace							  .metadata				  .Rhistory
+data								  modelio				  riddhik.doc
+.dbshell							  .modelio				  .rstudio-desktop
+.dbus								  modelio-open-source-3.6.1_amd64.deb	  sublime-text_build-3126_amd64.deb
+Desktop								  mongodb-linux-x86_64-ubuntu1604-3.2.7   .sudo_as_admin_successful
+.dmrc								  .mongorc.js				  .swt
+Documents							  .mozilla				  Templates
+Downloads							  Music					  Videos
+eclipse								  .mysql_history			  workspace
+.eclipse							  .nano					  .Xauthority
+eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz  .nbi					  .xsession-errors
+.emulator_console_auth_token					  .netbeans				  .xsession-errors.old
+
+1.2)ls-X  :sort alphabetically by entry extension
+
+apr@C04L0825:~$ ls -X
+Android		       Music			    mongodb-linux-x86_64-ubuntu1604-3.2.7
+AndroidStudioProjects  NetBeansProjects		    libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
+cuda-workspace	       Pictures			    modelio-open-source-3.6.1_amd64.deb
+data		       PracticalsCL3 extracommands  oracle-xe_11.2.0-2_amd64.deb
+Desktop		       Public			    sublime-text_build-3126_amd64.deb
+Documents	       R			    examples.desktop
+Downloads	       RemoteSystemsTempFiles	    oracle_installation-steps (1).doc
+eclipse		       Templates		    riddhik.doc
+GlassFish_Server       Videos			    eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz
+GlassFish_Server1      workspace		    pugixml-1.8.tar.gz
+GlassFish_Server2      glassfish-4.1.1		    rapidxml-1.13.zip
+modelio		       netbeans-8.1
+
+1.3)ls-s, --size :print the allocated size of each file, in blocks
+
+apr@C04L0825:~$ ls -s
+total 698236
+     4 Android								      4 Music
+     4 AndroidStudioProjects						      4 netbeans-8.1
+     4 cuda-workspace							      4 NetBeansProjects
+     4 data								     12 oracle_installation-steps (1).doc
+     4 Desktop								 269636 oracle-xe_11.2.0-2_amd64.deb
+     4 Documents							      4 Pictures
+     4 Downloads							      4 PracticalsCL3 extracommands
+     4 eclipse								      4 Public
+124620 eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz     352 pugixml-1.8.tar.gz
+    12 examples.desktop							      4 R
+     4 glassfish-4.1.1							     44 rapidxml-1.13.zip
+     4 GlassFish_Server							      4 RemoteSystemsTempFiles
+     4 GlassFish_Server1						     12 riddhik.doc
+     4 GlassFish_Server2						   7568 sublime-text_build-3126_amd64.deb
+   236 libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb				      4 Templates
+     4 modelio								      4 Videos
+295644 modelio-open-source-3.6.1_amd64.deb				      4 workspace
+     4 mongodb-linux-x86_64-ubuntu1604-3.2.7
+
+1.4)ls-l     use a long listing format
+
+apr@C04L0825:~$ ls -l
+total 698236
+drwxrwxr-x  3 apr  apr       4096 Sep 27  2016 Android
+drwxrwxr-x  4 apr  apr       4096 Sep 27  2016 AndroidStudioProjects
+drwxrwxr-x  6 apr  apr       4096 Jul 15  2016 cuda-workspace
+drwxrwxr-x  3 apr  apr       4096 Jul  8  2016 data
+drwxr-xr-x  4 apr  apr       4096 Aug  3  2017 Desktop
+drwxr-xr-x  2 apr  apr       4096 Apr  8  2017 Documents
+drwxr-xr-x  2 apr  apr       4096 Jul  5 09:20 Downloads
+drwxrwsr-x  9 apr  apr       4096 Apr  7  2017 eclipse
+-rw-rw-r--  1 apr  apr  127606492 Jan  3  2017 eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz
+-rw-r--r--  1 apr  apr       8980 Jul  1  2016 examples.desktop
+drwxrwxr-x  8 apr  apr       4096 Sep 27  2016 glassfish-4.1.1
+drwxrwxr-x  8 apr  apr       4096 Apr  8  2017 GlassFish_Server
+drwxrwxr-x  8 apr  apr       4096 Apr  7  2017 GlassFish_Server1
+drwxrwxr-x  8 apr  apr       4096 Apr  8  2017 GlassFish_Server2
+-rw-rw-r--  1 apr  apr     238842 Apr  7  2017 libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
+drwxrwxr-x  3 apr  apr       4096 Apr  7  2017 modelio
+-rw-rw-r--  1 apr  apr  302734610 Apr  7  2017 modelio-open-source-3.6.1_amd64.deb
+drwxrwxr-x  2 apr  apr       4096 Jul  8  2016 mongodb-linux-x86_64-ubuntu1604-3.2.7
+drwxr-xr-x  2 apr  apr       4096 Jul  4  2016 Music
+drwxrwxr-x 23 apr  apr       4096 Apr  8  2017 netbeans-8.1
+drwxrwxr-x  8 apr  apr       4096 Apr  8  2017 NetBeansProjects
+-rw-rw-r--  1 apr  apr      12288 Aug  3  2017 oracle_installation-steps (1).doc
+-rw-rw-r--  1 apr  apr  276099854 Jul 24  2017 oracle-xe_11.2.0-2_amd64.deb
+drwxr-xr-x  2 apr  apr       4096 Jul  7  2016 Pictures
+-rw-rw-r--  1 apr  apr       1335 Apr  7  2017 PracticalsCL3 extracommands
+drwxr-xr-x  2 apr  apr       4096 Jul  4  2016 Public
+-rw-rw-r--  1 apr  apr     357806 Apr  7  2017 pugixml-1.8.tar.gz
+drwxrwxr-x  3 apr  apr       4096 Jul  7  2016 R
+-rw-rw-r--  1 apr  apr      44163 Apr  7  2017 rapidxml-1.13.zip
+drwxr-xr-x  2 root root      4096 Jul  5  2016 RemoteSystemsTempFiles
+-rw-rw-r--  1 apr  apr       9216 Jul 13 13:56 riddhik.doc
+-rw-rw-r--  1 apr  apr    7746994 Apr  7  2017 sublime-text_build-3126_amd64.deb
+drwxr-xr-x  2 apr  apr       4096 Jul  4  2016 Templates
+drwxr-xr-x  2 apr  apr       4096 Jul  4  2016 Videos
+drwxrwxr-x  2 apr  apr       4096 Sep 27  2016 workspace
+
+1.5)ls-t     sort by modification time, newest first
+
+apr@C04L0825:~$ ls -t
+riddhik.doc			   sublime-text_build-3126_amd64.deb				     cuda-workspace
+Downloads			   modelio-open-source-3.6.1_amd64.deb				     data
+Desktop				   modelio							     mongodb-linux-x86_64-ubuntu1604-3.2.7
+oracle_installation-steps (1).doc  pugixml-1.8.tar.gz						     Pictures
+oracle-xe_11.2.0-2_amd64.deb	   eclipse							     R
+Documents			   rapidxml-1.13.zip						     RemoteSystemsTempFiles
+netbeans-8.1			   libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb			     Music
+NetBeansProjects		   eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz  Public
+GlassFish_Server		   glassfish-4.1.1						     Templates
+GlassFish_Server2		   workspace							     Videos
+PracticalsCL3 extracommands	   AndroidStudioProjects					     examples.desktop
+GlassFish_Server1		   Android
+
+1.6)ls-U     do not sort; list entries in directory order
+
+apr@C04L0825:~$ ls -U
+workspace				AndroidStudioProjects						  examples.desktop
+PracticalsCL3 extracommands		Android								  Desktop
+Public					Downloads							  modelio
+riddhik.doc				rapidxml-1.13.zip						  oracle-xe_11.2.0-2_amd64.deb
+Templates				sublime-text_build-3126_amd64.deb				  GlassFish_Server1
+mongodb-linux-x86_64-ubuntu1604-3.2.7	Pictures							  NetBeansProjects
+oracle_installation-steps (1).doc	GlassFish_Server						  cuda-workspace
+libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb	Documents							  eclipse
+glassfish-4.1.1				modelio-open-source-3.6.1_amd64.deb				  data
+RemoteSystemsTempFiles			Music								  netbeans-8.1
+pugixml-1.8.tar.gz			eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz  Videos
+R					GlassFish_Server2
+
+1.7)ls-X     sort alphabetically by entry extension
+
+apr@C04L0825:~$ ls -X
+Android		       Music			    mongodb-linux-x86_64-ubuntu1604-3.2.7
+AndroidStudioProjects  NetBeansProjects		    libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
+cuda-workspace	       Pictures			    modelio-open-source-3.6.1_amd64.deb
+data		       PracticalsCL3 extracommands  oracle-xe_11.2.0-2_amd64.deb
+Desktop		       Public			    sublime-text_build-3126_amd64.deb
+Documents	       R			    examples.desktop
+Downloads	       RemoteSystemsTempFiles	    oracle_installation-steps (1).doc
+eclipse		       Templates		    riddhik.doc
+GlassFish_Server       Videos			    eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz
+GlassFish_Server1      workspace		    pugixml-1.8.tar.gz
+GlassFish_Server2      glassfish-4.1.1		    rapidxml-1.13.zip
+modelio		       netbeans-8.1
+
+1.8)ls-1     list one file per line.
+
+apr@C04L0825:~$ ls -1
+Android
+AndroidStudioProjects
+cuda-workspace
+data
+Desktop
+Documents
+Downloads
+eclipse
+eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz
+examples.desktop
+glassfish-4.1.1
+GlassFish_Server
+GlassFish_Server1
+GlassFish_Server2
+libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
+modelio
+modelio-open-source-3.6.1_amd64.deb
+mongodb-linux-x86_64-ubuntu1604-3.2.7
+Music
+netbeans-8.1
+NetBeansProjects
+oracle_installation-steps (1).doc
+oracle-xe_11.2.0-2_amd64.deb
+Pictures
+PracticalsCL3 extracommands
+Public
+pugixml-1.8.tar.gz
+R
+rapidxml-1.13.zip
+RemoteSystemsTempFiles
+riddhik.doc
+sublime-text_build-3126_amd64.deb
+Templates
+Videos
+workspace
+
+2)pwd: Displays Present working Directory
+
+apr@C04L0825:~$ pwd
+/home/apr
+
+3)mkdir:Creates Directory
+
+apr@C04L0825:~$ mkdir Riddhik
+
+apr@C04L0825:~$ ls
+Android								  GlassFish_Server2			  pugixml-1.8.tar.gz
+AndroidStudioProjects						  libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb  R
+cuda-workspace							  modelio				  rapidxml-1.13.zip
+data								  modelio-open-source-3.6.1_amd64.deb	  RemoteSystemsTempFiles
+Desktop								  mongodb-linux-x86_64-ubuntu1604-3.2.7   Riddhik
+Documents							  Music					  riddhik2
+Downloads							  netbeans-8.1				  riddhik.doc
+eclipse								  NetBeansProjects			  sublime-text_build-3126_amd64.deb
+eclipse-linuxtools-helios-SR2-incubation-linux-gtk-x86_64.tar.gz  oracle_installation-steps (1).doc	  Templates
+examples.desktop						  oracle-xe_11.2.0-2_amd64.deb		  Videos
+glassfish-4.1.1							  Pictures				  workspace
+GlassFish_Server						  PracticalsCL3 extracommands
+GlassFish_Server1						  Public
+
+4)sudo:Gives permissions
+
+5)rmdir: deletes directory
+
+6)nano: opens nano editor
+
+apr@C04L0825:~/riddhik$ nano file1
+
+7)cat: displays contents of file
+
+apr@C04L0825:~/riddhik$ cat file1
+f
+f
+f
+f
+f
+ff
+f
+f
+f
+f
+f
+f
+f
+f
+ff
+f
+f
+
+f
+f
+8)cat >> filename : Updates current file
+
+apr@C04L0825:~/riddhik$ cat >>file1
+hello world
+^Z
+[10]+  Stopped                 cat >> file1
+apr@C04L0825:~/riddhik$ cat file1
+hello world
+
+9)less filename:Displays content line by line
+
+apr@C04L0825:~/riddhik$ less file1
+
+hello world
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+
+10)head filename: displays first 10 lines
+
+apr@C04L0825:~/riddhik$ head file1
+hello world
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+11)tail filename: displays last 10 lines
+
+apr@C04L0825:~/riddhik$ tail file1
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+
+12)cp filename /path: copy paste file
+
+apr@C04L0825:~/riddhik$ cp file1 /home/apr/Desktop/
+apr@C04L0825:~/Desktop$ ls
+9-4-2017.txt  Cl3Commands7thApril2017.odt  DMSA PLI  file1  Modelio 3.5  netbeans-8.1.desktop  oraclexe-gettingstarted.desktop
+
+13) mv filename /path: moves the file
+
+apr@C04L0825:~/Desktop$ mv file1 /home/apr/riddhik
+
+14)ps: shows process status
+
+apr@C04L0825:~/riddhik$ ps
+  PID TTY          TIME CMD
+ 5073 pts/4    00:00:00 bash
+ 5172 pts/4    00:00:00 ps
+
+15) top: gives details of process
+
+top - 14:57:24 up  1:14,  1 user,  load average: 0.05, 0.08, 0.07
+Tasks: 218 total,   2 running, 216 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.3 us,  0.6 sy,  0.0 ni, 98.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  4003604 total,  1207920 free,   971716 used,  1823968 buff/cache
+KiB Swap: 15624188 total, 15624188 free,        0 used.  2680036 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                    
+ 1042 root      20   0  237684  55684  37392 R   5.0  1.4   1:09.50 Xorg                                                                       
+ 5066 apr       20   0  661032  36380  28876 S   3.0  0.9   0:02.71 gnome-terminal-                                                            
+ 2517 apr       20   0 1255552 158812  79648 S   2.7  4.0   0:45.88 compiz                                                                     
+  912 mongodb   20   0 1535200 175276 148664 S   0.3  4.4   0:12.36 mongod                                                                     
+ 1194 root     -51   0       0      0      0 S   0.3  0.0   0:14.73 irq/31-nvidia                                                              
+ 2329 apr       20   0  188384   5564   5224 S   0.3  0.1   0:03.18 ibus-engine-sim                                                            
+ 2371 apr       20   0  734772  55516  39040 S   0.3  1.4   0:04.13 hud-service                                                                
+    1 root      20   0  119644   5948   4132 S   0.0  0.1   0:01.70 systemd                                                                    
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd                                                                   
+    3 root      20   0       0      0      0 S   0.0  0.0   0:00.01 ksoftirqd/0                                                                
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:
+
+16)ps – aux
+
+apr@C04L0825:~/riddhik$ ps -aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1 119644  5948 ?        Ss   13:43   0:01 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    13:43   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    13:43   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   13:43   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    13:43   0:00 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    13:43   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    13:43   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    13:43   0:00 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    13:43   0:00 [watchdog/1]
+root        12  0.0  0.0      0     0 ?        S    13:43   0:00 [migration/1]
+root        13  0.0  0.0      0     0 ?        S    13:43   0:00 [ksoftirqd/1]
+
+17)kill : kills task
+
+apr@C04L0825:~$ kill 5804
+
+18) | :used to send output of one command to input of another command
+
+apr@C04L0825:~$ ls | head
+add.c
+Android
+AndroidStudioProjects
+a.out
+cuda-workspace
+data
+Desktop
+Documents
+Downloads
+eclipse
+
+19)pstree: gives process in a hierarchical form
+
+apr@C04L0825:~$ pstree
+systemd─┬─ModemManager─┬─{gdbus}
+        │              └─{gmain}
+        ├─NetworkManager─┬─dhclient
+        │                ├─dnsmasq
+        │                ├─{gdbus}
+        │                └─{gmain}
+        ├─accounts-daemon─┬─{gdbus}
+        │                 └─{gmain}
+        ├─acpid
+        ├─agetty
+        ├─apache2───5*[apache2]
+        ├─avahi-daemon───avahi-daemon
+        ├─colord─┬─{gdbus}
+        │        └─{gmain}
+        ├─cron
+        ├─cups-browsed─┬─{gdbus}
+        │              └─{gmain}
+        ├─cupsd───3*[dbus]
+        ├─dbus-daemon
+        ├─dnsmasq
+        ├─gnome-keyring-d─┬─{gdbus}
+        │                 ├─{gmain}
+        │                 └─{timer}
+        ├─irqbalance
+        ├─java───18*[{java}]
+        ├─lightdm─┬─Xorg
+        │         ├─lightdm─┬─upstart─┬─at-spi-bus-laun─┬─dbus-daemon
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─at-spi2-registr─┬─{gdbus}
+        │         │         │         │                 └─{gmain}
+        │         │         │         ├─bamfdaemon─┬─{dconf worker}
+        │         │         │         │            ├─{gdbus}
+        │         │         │         │            └─{gmain}
+        │         │         │         ├─compiz─┬─{dconf worker}
+        │         │         │         │        ├─{gdbus}
+        │         │         │         │        ├─{gmain}
+        │         │         │         │        └─4*[{pool}]
+        │         │         │         ├─dbus-daemon
+        │         │         │         ├─dconf-service─┬─{gdbus}
+        │         │         │         │               └─{gmain}
+        │         │         │         ├─evolution-addre─┬─evolution-addre─┬─{dconf worker}
+        │         │         │         │                 │                 ├─{evolution-addre}
+        │         │         │         │                 │                 ├─{gdbus}
+        │         │         │         │                 │                 └─{gmain}
+        │         │         │         │                 ├─{dconf worker}
+        │         │         │         │                 ├─{evolution-addre}
+        │         │         │         │                 ├─{gdbus}
+        │         │         │         │                 └─{gmain}
+
+20)ps -hp:displays process in a hierarchical form with process id 
+
+21)chmod: sets permissions for user,group and world
+22)man: gives manual pages, description of a particular commands
+
+LS(1)                                                          User Commands                                                          LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List information about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor --sort is
+       specified.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+              with -l, print the author of each file
+
+       -b, --escape
+              print C-style escapes for nongraphic characters
+
+       --block-size=SIZE
+              scale sizes by SIZE before printing them; e.g., '--block-size=M' prints sizes in units of 1,048,576 bytes;  see  SIZE  format
+              below
+
+       -B, --ignore-backups
+              do not list implied entries ending with ~
+
+       -c     with  -lt:  sort  by, and show, ctime (time of last modification of file status information); with -l: show ctime and sort by
+              name; otherwise: sort by ctime, newest first
+
+       -C     list entries by columns
+
+       --color[=WHEN]
+              colorize the output; WHEN can be 'always' (default if omitted), 'auto', or 'never'; more info below
+
+
+
+23)grep: it is used to search a particular word or character in any file
+
+apr@C04L0827:~$ grep pqr abc
+3 pqr 40

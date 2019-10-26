@@ -1,0 +1,77 @@
+Accept array elements from user:
+
+(format t "~% Enter the size of array")
+(terpri)
+(setf n (read))
+(setf my-array (make-array n))
+(terpri)
+(loop for i from 0 to (- n 1)
+        do (setf (aref my-array i) (read))
+)
+(write my-array)
+
+O/P:
+Enter the size of array
+5
+22
+3
+4
+5
+6
+#(22 3 4 5 6)
+
+Bubble Sort:
+
+(defun bubble ()	;function definition
+        (bubbleread)
+        
+        (do ((i 0 (+ i 1))) ((= i (- n 1)))	;loop for passes
+        
+                (do ((j 0 (+ j 1))) ((= j (- (- n i) 1)))	;loop for comparison
+                
+                        (if (> (aref arr j) (aref arr (+ j 1) ) )	;comparison
+                                (swap j (+ j 1))
+                         )
+                )
+                (format t "~% Pass ~D" (+ i 1))
+                (write arr)
+        )
+        
+)
+(defun swap(x y)	;function for swap
+        (setf temp (aref arr x))
+        (setf (aref arr x) (aref arr y))
+        (setf (aref arr y) temp)
+)
+
+(defun bubbleread()	;function for accepting elements
+        (format t "~% Enter the size of array")
+        (terpri)
+        (setf n (read))
+        (setf arr (make-array n))
+        (terpri)
+        (loop for i from 0 to (- n 1)
+                do (setf (aref arr i) (read))
+        )
+)
+ 
+ 
+               
+(bubble )
+
+O/P:
+
+Enter the size of array
+5
+
+1
+99
+0
+5
+4
+
+ Pass 0#(1 0 5 4 99)
+ Pass 1#(0 1 4 5 99)
+ Pass 2#(0 1 4 5 99)
+ Pass 3#(0 1 4 5 99)
+T

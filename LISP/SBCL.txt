@@ -1,0 +1,236 @@
+Objective:To learn basic SBCL commands
+
+1. +,-,*,/ operator:
+
+* (+ 2 3)
+
+5
+* (+ 2 3 5)
+
+10
+* (+ a b)
+
+2.sqrt: to find square root
+
+ (sqrt 9)
+
+3.0
+
+3. write :used to print a line
+
+* (write "hello world")
+"hello world"
+"hello world"
+
+4. ‘ ; ’ :adding a comment
+
+* (write-line "hello world");writing a line
+hello world
+"hello world"
+* 
+
+5. ‘ :used to mark a statement that we dont want to evaluate
+
+6.set: used to set values to variable
+
+7.setq:
+
+* (setq a'(rose daisy))
+
+
+(ROSE DAISY)
+
+8.setf:
+
+* (setf a '(rose daisy))
+
+
+(ROSE DAISY)
+
+9.car:gives value of first node
+
+* (car '(a b c d e))
+
+A
+
+
+
+
+10.cdr:gives values of all nodes except first node present in the list
+
+* (cdr '(a b c d e))
+
+(B C D E)
+
+
+
+11.last:gives value of last node
+
+* (last '(a b c d))
+
+(D)
+
+
+12.cons:displays 2 list in combined manner
+
+* (cons 'a '(b c ))
+
+(A B C)
+
+13.list:displays lists in differently
+
+* (list '(a '(b c)))
+
+((A '(B C)))
+
+14.append:
+
+* (append '(a b) '(c d) '() '(e f))
+
+(A B C D E F)
+
+15.reverse:used to reverse the list
+
+* (reverse '(a b (d e)))
+
+((D E) B A)
+
+
+
+16.Code 1
+
+(write-line "' used")
+(write '(+ 2 3))
+(write-line " ")
+(write-line "' is not used")
+(write (+ 2 3))
+
+17.Code 2
+
+(setq x 5)
+(setq y 24.6)
+(setq ch nil)
+(setq n 321.87)
+(setq z 12.0e+4)
+(setq r 124/2)
+(print x)
+(print y)
+(print ch)
+(print z)
+(print n)
+(print r)
+
+18.Code 3
+
+(defvar x 5)
+(defvar y 24.6)
+(defvar ch nil)
+(defvar n 321.87)
+(defvar z 12.0e+4)
+(defvar r 124/2)
+(print (type-of x))
+(print (type-of y))
+(print (type-of z))
+(print (type-of n))
+(print (type-of r))
+(print (type-of ch))
+
+19.cdr: Omits first character and displays rest
+
+* (cdr'(a b c ))
+(B C)
+
+20. (defvar x 30) (setq y 40) (format t "x=~2d y=~2d ~%" x y)
+
+21.
+(defconstant PI 3.14)
+(defun area-circle(radius)
+	(format t "area of circle=~5f" (* PI radius radius))
+)
+(area-circle 10)
+
+22.
+(defconstant PI 3.14)
+(defun peri(radius)
+	(format t "circumfurance of circle=~5f" (* 2 PI radius))
+)
+
+(peri 10)
+
+23.
+
+(defun area(l b)
+	(format t "area of rectangle=~5f" (* l b))
+)
+
+(area 5 5)
+ 
+24.mod:Performs Mod of 2 numbers
+
+* (mod 5 3)
+
+2
+ 
+25. * (incf x 3):Performs increment on given value
+
+13
+
+26.* (decf x 3):Performs decrement on given value
+
+10
+
+27.Program to perform greater than or less than
+(setq a 10)
+(cond ((> a 20) (format t "a is greater than 20"))
+	((< a 20) (format t "a is less than 20"))
+	((= a 20) (format t "a is equal to 20"))
+)
+
+28.
+
+(setq a 10)
+(if (< a 20)
+	(print "a is less than 20")
+)
+
+29.
+
+(setq a 10)
+(when (< a 20)
+	(format t "a is less than 20")
+)
+
+30.
+
+(setq num 7)
+(case num
+	(1 (format t "monday"))
+	(2 (format t "tuesday"))
+	(3 (format t "wednesday"))
+	(4 (format t "thursday"))
+	(5 (format t "friday"))
+	(6 (format t "satday"))
+	(7 (format t "sunday"))
+)
+	
+31.
+
+(let day (read))
+(case day
+	(1 (format t "monday"))
+	(2 (format t "tuesday"))
+	(3 (format t "wednesday"))
+	(4 (format t "thursday"))
+	(5 (format t "friday"))
+	(6 (format t "satday"))
+	(7 (format t "sunday"))
+)
+
+32.
+
+(setq a 1)
+(loop (setq a (+ a 1))
+	(write a)
+	(when (> a 17) (return a))
+)
+
