@@ -4,6 +4,7 @@ msg1len equ $-msg1
 msg2 db "File Copied Sucessfully"
 msg2len equ $-msg2
 
+#creating a macro
 %macro operate 4
 mov rax,%1
 mov rdi,%2
@@ -12,6 +13,7 @@ mov rdx,%4
 syscall
 %endmacro
 
+#allocating the bytes 
 section .bss
 fname1 resb 15
 fd1 resq 1
